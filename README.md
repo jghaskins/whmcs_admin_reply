@@ -10,10 +10,13 @@ Create an admin_reply_notification folder in the modules/addons folder under the
 
 Notes
 -----
-Although optional, it is recommended that if youe have a line like this in your "Support Ticket Response" template:
+This adds an `$admin` variable that can be used in templates which contains the name of the staff member responding to the ticket
+
+Usage example:
+if you have a line like this in your "Support Ticket Response" template:
 
 `Client: {$client_name}{if $client_id} #{$client_id}{/if}`
 
-you replace it with this (adjusting for any differences in your template):
+you could replace it with this (adjusting for any differences in your template):
 
 `{if $client_name}Client: {$client_name}{if $client_id} #{$client_id}{/if}{/if}{if $admin}Admin: {$admin}{/if}`
